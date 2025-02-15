@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import AestheticianDetection from "./AestheticianDetection"; // Import AestheticianDetection
+import AestheticianDetection from "./AestheticianDetection";
+import ChatBox from "./ChatBox"; // Add this import
 
 const VideoChat = () => {
   const myVideo = useRef();
@@ -27,12 +28,32 @@ const VideoChat = () => {
   }, []);
 
   return (
-    <div>
-      <h2></h2>
-      <video ref={myVideo} autoPlay playsInline muted />
-      {myVideo && <AestheticianDetection videoRef={myVideo} user="Your" />}
+    <div style={styles.container}>
+      <div style={styles.videoSection}>
+        <h2></h2>
+        <video ref={myVideo} autoPlay playsInline muted style={styles.video} />
+        {myVideo && <AestheticianDetection videoRef={myVideo} user="Your" />}
+      </div>
+      <ChatBox />
     </div>
   );
+};
+
+const styles = {
+  container: {
+    display: 'flex',
+    gap: '20px',
+    padding: '20px',
+    alignItems: 'flex-start'
+  },
+  videoSection: {
+    flex: '1',
+    maxWidth: '70%'
+  },
+  video: {
+    width: '100%',
+    borderRadius: '10px'
+  }
 };
 
 export default VideoChat;
