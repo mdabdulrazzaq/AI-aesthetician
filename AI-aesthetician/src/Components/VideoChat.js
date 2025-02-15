@@ -69,10 +69,8 @@ const VideoChat = () => {
   return (
     <div className="container">
       <div className="content-wrapper">
-        
-          <video rclassName="video-container" ef={myVideo} autoPlay playsInline muted />
-          <AestheticianDetection videoRef={myVideo} user="Your" />
-        
+        {/* Render the AestheticianDetection component here */}
+        <AestheticianDetection  videoRef={myVideo} />
   
         <div className="chatbot">
           <div className="chatbox">
@@ -98,7 +96,6 @@ const VideoChat = () => {
       </div>
     </div>
   );
-  
 };
 
 export default VideoChat;

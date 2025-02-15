@@ -1,19 +1,16 @@
 import React, { useRef } from "react";
+import "./style.css";
 
 const AestheticianDetection = ({ videoRef, user }) => {
   return (
-    <div style={{ position: "relative", display: "inline-block" }}>
-      <video
+  
+      <video className='video-container'
         ref={videoRef}
         autoPlay
-        playsInline
         muted
-        style={{ width: "100%", height: "auto", borderRadius: "10px" }}
       />
-      {/* <h3 style={{ textAlign: "center", margin: "10px 0" }}>
-        {user}'s Video Feed
-      </h3> */}
-    </div>
+      
+    
   );
 };
 
