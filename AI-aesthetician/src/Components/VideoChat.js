@@ -69,13 +69,11 @@ const VideoChat = () => {
   return (
     <div className="container">
       <div className="content-wrapper">
-        {/* Video Section */}
-        <div className="video-container">
-          <video ref={myVideo} autoPlay playsInline muted />
+        
+          <video rclassName="video-container" ef={myVideo} autoPlay playsInline muted />
           <AestheticianDetection videoRef={myVideo} user="Your" />
-        </div>
-
-        {/* Chatbot Section */}
+        
+  
         <div className="chatbot">
           <div className="chatbox">
             {messages.map((msg, index) => (
@@ -100,6 +98,7 @@ const VideoChat = () => {
       </div>
     </div>
   );
+  
 };
 
 export default VideoChat;

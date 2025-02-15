@@ -1,17 +1,14 @@
-/* Import Google Font for an elegant feel */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@300;400;700&display=swap');
 
-/* Main container */
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   padding: 20px;
-  background: linear-gradient(to right, #fdfcfb, #f1ebe5); /* Soft beige-pink gradient */
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Soft blue gradient */
   font-family: 'Playfair Display', serif;
 }
 
-/* Wrapper for Video and Chatbot */
 .content-wrapper {
   display: flex;
   justify-content: space-between;
@@ -19,16 +16,15 @@
   width: 100%;
   flex-grow: 1;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8); /* Light white background */
   border-radius: 15px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Video Section */
 .video-container {
-  flex: 2;
-  max-width: 65%;
-  position: relative;
+  max-width: 50%;
+  margin-left: auto; /* Aligns the container to the right */
+  margin-right: 0;
   padding: 20px;
   background: white;
   border-radius: 15px;
@@ -36,20 +32,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center the video vertically */
-  border: 3px solid #ffb6c1;
+  justify-content: center; /* Center the video vertically and horizontally */
+  border: 3px solid #00acc1; /* Light cyan border */
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  height: 100%; /* Ensure it takes full height */
+  height: 60%; /* Set a fixed height or percentage less than 100% */
+  overflow: hidden; /* Prevent overflow */
+  align-self: flex-start; /* Ensures the video container stays on the right */
 }
 
 
 
-
-/* Chatbot Section */
 .chatbot {
   flex: 1;
-  max-width: 30%;
-  height: 100%;
+  max-width: 50%;
+  height: 50%;
   border-radius: 15px;
   padding: 15px;
   background: #ffffff;
@@ -59,17 +55,15 @@
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Chatbox Messages */
 .chatbox {
   flex-grow: 1;
   overflow-y: auto;
   padding: 15px;
   border-radius: 10px;
-  background: rgba(255, 182, 193, 0.2); /* Light pinkish background */
+  background: rgba(224, 244, 255, 0.4); /* Light blueish background */
   box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Message Styles */
 .message {
   padding: 10px;
   margin: 8px 0;
@@ -81,7 +75,7 @@
 }
 
 .user {
-  background: #ffb6c1; /* Soft pink */
+  background: #00acc1; /* Cyan */
   color: white;
   text-align: right;
   align-self: flex-end;
@@ -89,17 +83,16 @@
 }
 
 .bot {
-  background: #f5f5f5; /* Soft off-white */
+  background: #f1f1f1; 
   color: #333;
   text-align: left;
   align-self: flex-start;
 }
 
-/* Chat Input Section */
 .chat-input {
   display: flex;
   padding: 10px;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(224, 244, 255, 0.4); /* Light blue background */
   border-radius: 10px;
 }
 
@@ -123,45 +116,40 @@ button {
   transition: 0.3s ease-in-out;
 }
 
-/* Send Button */
 button:first-of-type {
-  background: #ff758c;
+  background: #0097a7; /* Deep blue */
   color: white;
 }
+
+button:first-of-type:hover {
+  background: #007c8d; /* Darker blue */
+}
+
+button:last-of-type {
+  background: #00acc1; /* Cyan */
+  color: white;
+}
+
+button:last-of-type:hover {
+  background: #0097a7; /* Darker cyan */
+}
+
+.chatbot, .video-container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
 .aesthetic-heading {
   font-family: 'Playfair Display', serif;
   font-size: 42px;
   text-align: center;
   font-weight: 700;
-  background: linear-gradient(to right, #d6336c, #b2184d); /* Dark Pink Gradient */
+  background: linear-gradient(to right, #0288d1, #01579b); /* Blue gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 8px rgba(214, 51, 108, 0.4); /* Soft glow effect */
+  text-shadow: 2px 2px 8px rgba(2, 136, 209, 0.4); /* Soft glow effect */
   letter-spacing: 2px;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out;
-}
-
-
-
-
-button:first-of-type:hover {
-  background: #ff4e78;
-}
-
-/* Mic Button */
-button:last-of-type {
-  background: #ffb6c1;
-  color: white;
-}
-
-button:last-of-type:hover {
-  background: #ff87a0;
-}
-
-/* Smooth fade-in animation for chatbot */
-.chatbot, .video-container {
-  animation: fadeIn 0.8s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -174,4 +162,3 @@ button:last-of-type:hover {
     transform: translateY(0);
   }
 }
-
