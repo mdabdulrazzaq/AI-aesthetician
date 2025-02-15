@@ -14,7 +14,8 @@ const App = () => {
 };
   return (
     <div>
-      <h1> AI - Aesthetician </h1>
+      <h1 className="aesthetic-heading">AI - Aesthetician</h1>
+
       <VideoChat />
       {/* <TestFaceMesh/> */}
     

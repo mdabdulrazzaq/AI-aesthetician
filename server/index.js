@@ -2,10 +2,10 @@ const express = require("express");
 const http = require("http");
 const cors = require("cors");
 const { Server } = require("socket.io");
+//const OpenAI = require("openai"); // Import OpenAI API
 
 const app = express();
 app.use(cors());
-
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
@@ -14,40 +14,29 @@ const io = new Server(server, {
   },
 });
 
+//const openai = new OpenAI({ apiKey: "YOUR_OPENAI_API_KEY" });
+
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  socket.on("join-room", (roomId, userId) => {
-    socket.join(roomId);
-    console.log(`User ${userId} joined room ${roomId}`);
-    
-    // Notify others in the room
-    socket.broadcast.to(roomId).emit("user-connected", userId);
+  socket.on("chat-message", async (message) => {
+    console.log(`User said: ${message}`);
 
-    // Relay offer, answer, and ICE candidates
-    socket.on("offer", (offer, targetId) => {
-      console.log("Relaying offer to:", targetId);
-      socket.to(targetId).emit("offer", offer, socket.id);
-    });
+    // Generate AI response
+    // const response = await openai.chat.completions.create({
+    //   model: "gpt-4",
+    //   messages: [{ role: "user", content: message }],
+    // });
 
-    socket.on("answer", (answer, targetId) => {
-      console.log("Relaying answer to:", targetId);
-      socket.to(targetId).emit("answer", answer, socket.id);
-    });
+    const reply = response.choices[0].message.content;
+    socket.emit("bot-reply", reply); // Send reply back to user
+  });
 
-    socket.on("ice-candidate", (candidate, targetId) => {
-      console.log("Relaying ICE candidate to:", targetId);
-      socket.to(targetId).emit("ice-candidate", candidate, socket.id);
-    });
-
-    // Handle user disconnection
-    socket.on("disconnect", () => {
-      console.log(`User ${userId} disconnected from room ${roomId}`);
-      socket.broadcast.to(roomId).emit("user-disconnected", userId);
-    });
+  socket.on("disconnect", () => {
+    console.log(`User disconnected: ${socket.id}`);
   });
 });
 
 server.listen(8080, () => {
-  console.log("Signaling server running on port 8080");
+  console.log("Server running on port 8080");
 });
