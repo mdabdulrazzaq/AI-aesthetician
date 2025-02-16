@@ -22,39 +22,10 @@ function SessionStopped({ startSession }) {
   );
 }
 
-function SessionActive({ stopSession, sendTextMessage }) {
-  const [message, setMessage] = useState("");
-
-  function handleSendClientEvent() {
-    sendTextMessage(message);
-    setMessage("");
-  }
-
+function SessionActive({ stopSession }) {
   return (
     <div className="flex items-center justify-center w-full h-full gap-4">
-      <input
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && message.trim()) {
-            handleSendClientEvent();
-          }
-        }}
-        type="text"
-        placeholder="send a text message..."
-        className="border border-gray-200 rounded-full p-4 flex-1"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <button
-        onClick={() => {
-          if (message.trim()) {
-            handleSendClientEvent();
-          }
-        }}
-        className="bg-blue-400"
-      >
-        send text
-      </button>
-      <button onClick={stopSession}>
+      <button onClick={stopSession} className="bg-red-600">
         disconnect
       </button>
     </div>
@@ -64,9 +35,6 @@ function SessionActive({ stopSession, sendTextMessage }) {
 export default function SessionControls({
   startSession,
   stopSession,
-  sendClientEvent,
-  sendTextMessage,
-  serverEvents,
   isSessionActive,
 }) {
   return (
@@ -74,9 +42,6 @@ export default function SessionControls({
       {isSessionActive ? (
         <SessionActive
           stopSession={stopSession}
-          sendClientEvent={sendClientEvent}
-          sendTextMessage={sendTextMessage}
-          serverEvents={serverEvents}
         />
       ) : (
         <SessionStopped startSession={startSession} />
