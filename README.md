@@ -2,7 +2,7 @@
 
 We start by downloading the following Roboflow dataset:
 https://universe.roboflow.com/nguyen-huyen-cvq6e/skin-problems-detection-jp4jv/dataset/5
-# Workflow for Skin Condition Detection and Prompting
+
 
 We start by downloading the following Roboflow dataset:
 https://universe.roboflow.com/nguyen-huyen-cvq6e/skin-problems-detection-jp4jv/dataset/5
