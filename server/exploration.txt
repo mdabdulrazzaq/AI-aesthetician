@@ -1,0 +1,29 @@
+
+
+Server APIs
+
+0. initial analysis
+  Params
+    - image frame
+
+
+
+1. `extract_features` -- @Neel
+  params:
+    - image frame
+
+
+
+2. reasoning 
+  Params: 
+    - outputs of `extract_features`
+    - text-based user context from frontend
+
+
+
+
+
+Frontend 
+
+webRTC realtime 
+  - voice only realtime
