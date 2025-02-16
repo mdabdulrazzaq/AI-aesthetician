@@ -13,3 +13,4 @@ We use a LandmarkDetector from Mediapipe to get facial landmarks to get points l
 
 We then train a Yolov9 model on the following dataset. We use the trained checkpoint to detect skin conditions from an input image.
 
+![image](https://github.com/user-attachments/assets/e3f98042-4d71-43ef-8aed-ddb8391fc8cf)
