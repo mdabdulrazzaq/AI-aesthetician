@@ -17,7 +17,7 @@ We then train a Yolov9 model on the following dataset. We use the trained checkp
 
 We then combine our landmark prediction and skin-condition prediction to distill all that information into a prompt:
 
-''Detected Blackhead in a rectangular box with coordinates (Top-Left: 276,461, Bottom-Right: 300,482)
+''**Detected Blackhead in a rectangular box with coordinates (Top-Left: 276,461, Bottom-Right: 300,482)
 Detected Blackhead in a rectangular box with coordinates (Top-Left: 174,494, Bottom-Right: 198,513)
 Detected Unknown Condition in a rectangular box with coordinates (Top-Left: 496,588, Bottom-Right: 640,635)
-Facial landmarks detected: Left eye at [263 284], Right eye at [414 254], Nose at [405 379], and Mouth at [408 474].'
+Facial landmarks detected: Left eye at [263 284], Right eye at [414 254], Nose at [405 379], and Mouth at [408 474].**"
