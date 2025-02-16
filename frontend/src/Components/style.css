@@ -3,7 +3,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   padding: 20px;
   /* background: linear-gradient(to right, #f0f4f8, #ffffff); Soft gradient for a clean look */
   font-family: 'Roboto', sans-serif; /* Professional, clean sans-serif font */
@@ -16,14 +15,14 @@
   width: 100%;
   flex-grow: 1;
   gap:10px;
-  /* padding: 20px; */
+  padding: 20px;
   background: rgba(255, 255, 255, 0.95); /* Slight white background with soft transparency */
   border-radius: 12px; /* Rounded corners for a smooth, polished look */
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .video-container {
-  max-width: 48%;
+  /* max-width: 48%; */
   padding: 20px;
   background: #ffffff; /* Clean white background */
   border-radius: 12px;
