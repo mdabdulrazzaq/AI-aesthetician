@@ -8,9 +8,8 @@ The dataset distribution (train):
 ![image](https://github.com/user-attachments/assets/d658be38-665b-481e-91bf-27e564011bda)
 
 
-We use a LandmarkDetector from Mediapipe to get facial landmarks to locate left eye, right eye, nose and chin points using Mediapipe.
+We use a LandmarkDetector from Mediapipe to get facial landmarks to get points locating the left eye, right eye, nose, and chin using Mediapipe.
 ![image](https://github.com/user-attachments/assets/16f723d9-4eb6-457a-92e6-e185ebf43933)
 
-![image](https://github.com/user-attachments/assets/f2594630-b276-413e-88d7-d410d2a09037)
-We use a LandmarkDetector from Mediapipe to get facial landmarks.
-![image](https://github.com/user-attachments/assets/f2594630-b276-413e-88d7-d410d2a09037)
+We then train a Yolov9 model on the following dataset. We use the trained checkpoint to detect skin conditions from an input image.
+
