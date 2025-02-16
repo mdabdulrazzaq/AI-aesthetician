@@ -3,6 +3,7 @@ import VideoChat from "./Components/VideoChat";
 import SessionControls from "./Components/SessionControls";
 
 import process from 'process';
+import EventLog from "./Components/EventLog";
 
 window.process = process;
 
@@ -129,6 +130,8 @@ const App = () => {
         stopSession={stopSession}
         isSessionActive={isSessionActive}
       />
+
+      {/* <EventLog events={events} /> */}
 
       <VideoChat />
     
