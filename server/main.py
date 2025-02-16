@@ -60,6 +60,18 @@ async def get_token():
         print("Token generation error:", str(e))
         return {"error": "Failed to generate token"}, 500
 
+@app.get("/initial-analysis")
+async def get_initial_analysis():
+    print('TODO')
+
+@app.get("/extract-features")
+async def extract_features():
+    print('TODO')
+
+@app.get("/reason-recommendations")
+async def get_recommendations():
+    print('TODO')
+
 # Run the server
 if __name__ == "__main__":
     uvicorn.run(socket_app, host="0.0.0.0", port=8080)
